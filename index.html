@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./form.js" defer></script>
+  </head>
+  <body>
+    <section class="main">
+      <div class="container">
+        <div class="main-content">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="main-heading">AI Diagnostic</h1>
+              <p class="mt-4">
+                AI Based Blood Pressure Software is your consultant which can
+                help you how to treat with stage 1 and stage 2 Blood Pressure
+                problems. Fill that form then AI Based Software analyze the
+                stage and recommend a medicine according to the patient
+                conditions.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 mt-3">
+              <h2 class="personal-info">Personal Information</h2>
+              <div class="container personal">
+                <p class="mt-4 mb-1">Name*</p>
+                <input type="text" name="gender" id="name" />
+                <p class="mt-4 mb-1">Gender*</p>
+                <input
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  onchange="onGenderChange(0)"
+                />
+                <label for="male">Male</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  class="ml-3"
+                  id="female"
+                  onchange="onGenderChange(1)"
+                />
+                <label for="female">Female</label>
+                <p class="mt-4">Age*</p>
+                <span class="d-block">
+                  <input
+                    type="radio"
+                    name="age"
+                    id="eighteen-plus"
+                    onchange="onAgeChange(0)"
+                  />
+                  <label for="eighteen-plus">18-34</label>
+                </span>
+                <span class="d-block">
+                  <input
+                    type="radio"
+                    name="age"
+                    id="thirty-plus"
+                    onchange="onAgeChange(1)"
+                  />
+                  <label for="thirty-plus">35-50</label>
+                </span>
+                <span class="d-block">
+                  <input
+                    type="radio"
+                    name="age"
+                    id="fifty-plus"
+                    onchange="onAgeChange(2)"
+                  />
+                  <label for="fifty-plus">51-64</label>
+                </span>
+                <span class="d-block">
+                  <input
+                    type="radio"
+                    name="age"
+                    id="sixty-plus"
+                    onchange="onAgeChange(3)"
+                  />
+                  <label for="sixty-plus">65+</label>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+              <p class="mt-4 mb-2">
+                What is the severity of your headache during hypertension?
+              </p>
+              <input
+                type="radio"
+                name="severity"
+                id="mild"
+                onchange="onHeadacheChange(0)"
+              />
+              <label for="mild">Mild</label>
+              <input
+                type="radio"
+                name="severity"
+                id="moderate"
+                class="ml-3"
+                onchange="onHeadacheChange(1)"
+              />
+              <label for="moderate">Moderate</label>
+              <input
+                type="radio"
+                name="severity"
+                id="severe"
+                class="ml-3"
+                onchange="onHeadacheChange(2)"
+              />
+              <label for="severe">Severe</label>
+
+              <p class="mb-2 mt-1">Do you feel shortness of breath?</p>
+              <input
+                type="radio"
+                name="shortness"
+                id="yes1"
+                onchange="onBreadthChange(0)"
+              />
+              <label for="yes1">Yes</label>
+              <input
+                type="radio"
+                name="shortness"
+                id="no1"
+                class="ml-3"
+                onchange="onBreadthChange(1)"
+              />
+              <label for="no1">No</label>
+
+              <p class="mb-2 mt-1">Do you feel visual changes?</p>
+              <input
+                type="radio"
+                name="visual"
+                id="yes2"
+                onchange="onVisualChange(0)"
+              />
+              <label for="yes2">Yes</label>
+              <input
+                type="radio"
+                name="visual"
+                id="no2"
+                class="ml-3"
+                onchange="onVisualChange(1)"
+              />
+              <label for="no2">No</label>
+
+              <p class="mb-2 mt-1">
+                Have you ever experienced nose bleeding during hypertension?
+              </p>
+
+              <input
+                type="radio"
+                name="bleeding"
+                id="yes3"
+                onchange="onNoseChange(0)"
+              />
+              <label for="yes3">Yes</label>
+              <input
+                type="radio"
+                name="bleeding"
+                id="no3"
+                class="ml-3"
+                onchange="onNoseChange(1)"
+              />
+              <label for="no3">No</label>
+
+              <p class="mb-2 mt-1">
+                Since when you have been diagnoased as high blood pressure
+                patient?
+              </p>
+              <input
+                type="radio"
+                name="timeline"
+                id="less-year"
+                onchange="onBloodChange(0)"
+              />
+              <label for="less-year">&#60;1 Year</label>
+              <input
+                type="radio"
+                name="timeline"
+                id="more-one"
+                class="ml-3"
+                onchange="onBloodChange(1)"
+              />
+              <label for="more-one">1 - 5 Years</label>
+              <input
+                type="radio"
+                name="timeline"
+                id="more-five"
+                class="ml-3"
+                onchange="onBloodChange(2)"
+              />
+              <label for="more-five">&#62;5 Years</label>
+
+              <p class="mb-2 mt-1">
+                What was your recent BP range for last 2 months? (Systolic)
+              </p>
+              <input
+                type="radio"
+                name="systolic"
+                id="low"
+                onchange="onRangeChange(0)"
+              />
+              <label for="low">111 - 120</label>
+              <input
+                type="radio"
+                name="systolic"
+                id="normal"
+                class="ml-3"
+                onchange="onRangeChange(1)"
+              />
+              <label for="normal">121- 130</label>
+              <input
+                type="radio"
+                name="systolic"
+                id="high"
+                class="ml-3"
+                onchange="onRangeChange(2)"
+              />
+              <label for="high">130+</label>
+
+              <p class="mb-2 mt-1">
+                What was your recent BP range for last 2 months? (Diastolic)
+              </p>
+              <input
+                type="radio"
+                name="diastolic"
+                id="low2"
+                onchange="onDRangeChange(0)"
+              />
+              <label for="low2">70 - 80</label>
+              <input
+                type="radio"
+                name="diastolic"
+                id="normal1"
+                class="ml-3"
+                onchange="onDRangeChange(1)"
+              />
+              <label for="low2">81 - 90</label>
+              <input
+                type="radio"
+                name="diastolic"
+                id="normal2"
+                class="ml-3"
+                onchange="onDRangeChange(2)"
+              />
+              <label for="normal2">91 - 100</label>
+              <input
+                type="radio"
+                name="diastolic"
+                id="high2"
+                class="ml-3"
+                onchange="onDRangeChange(3)"
+              />
+              <label for="high2">100+</label>
+              <button class="site-btn px-5 d-block py-2 mt-3">Submit</button>
+            </div>
+            <div class="col-lg-3 mt-3">
+              <p>Select the Algorithm of your choice</p>
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="randomForest()"
+              >
+                Random Forest Classifier
+              </button>
+              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+                AdaBoost Classifier
+              </button>
+              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+                Naive Bayes Classifier
+              </button>
+              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+                Support Vector Machine Classifier
+              </button>
+              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+                Decision Tree Classifier
+              </button>
+              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+                Logistic Regression Classifier
+              </button>
+              <h2 class="personal-info result">Results</h2>
+
+              <div class="container personal result">
+                <p class="mt-4 mb-0">Stage</p>
+                <p class="my-3 main-heading" id="pressureStage">" "</p>
+                <p class="mb-0">Do you want to recommend Medication?</p>
+                <button class="site-btn px-4 d-block py-2 mt-3">
+                  Medication
+                </button>
+                <p class="my-3 main-heading" id="medication">" "</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./requests.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+.main{
+    background: url('bp-meter.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.main::after{
+    content: '';
+    background: rgb(0, 0, 0, .8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.main-heading{color: #F3A817;}
+.main-content{
+    position: relative;
+    z-index: 3;
+    padding: 70px 0;
+}
+.site-btn{
+    background: #F3A817;
+    border: 1px solid #F3A817;
+    border-radius: 50px;
+    color: white;
+    transition: ease-in-out .2s;
+    cursor: pointer;
+}
+.site-btn:hover{
+    background: transparent;
+    color: #F3A817;
+}
+
+.personal{
+    border: 1px solid #f3a817 ;
+    border-radius: 5px;
+}
+.personal-info{
+    color:#F3A817;
+    text-align: left;
+    font-size: 18px;
+}
+.classify{
+    font-size: 12px;
+}
+.result{
+    margin-top: 6%;
+}
