@@ -1,5 +1,6 @@
 let stage = document.querySelector("#pressureStage");
 let medication = document.querySelector("#medication");
+let medicine = "";
 
 const canSubmit = () => {
   return (
@@ -40,7 +41,7 @@ function classify(url) {
     .then((res) => res.json())
     .then((res) => {
       stage.innerHTML = res.prediction;
-      medication.innerHTML = MEDICINES[res.prediction];
+      medicine = MEDICINES[res.prediction];
     });
 }
 
@@ -52,3 +53,9 @@ const MEDICINES = {
   "HYPERTENSION (Stage-2).": "Medicine: Natrilix",
   "HYPERTENSIVE CRISIS.": "Medicine: Benefol",
 };
+
+function handleMedicine() {
+  if (medicine) {
+    medication.innerHTML = medicine;
+  }
+}
