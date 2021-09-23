@@ -272,23 +272,38 @@
               <p>Select the Algorithm of your choice</p>
               <button
                 class="site-btn px-4 d-block py-2 mt-3 classify"
-                onclick="randomForest()"
+                onclick="classify('rf')"
               >
                 Random Forest Classifier
               </button>
-              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="classify('boost')"
+              >
                 AdaBoost Classifier
               </button>
-              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="classify('naive')"
+              >
                 Naive Bayes Classifier
               </button>
-              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="classify('svm')"
+              >
                 Support Vector Machine Classifier
               </button>
-              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="classify('dt')"
+              >
                 Decision Tree Classifier
               </button>
-              <button class="site-btn px-4 d-block py-2 mt-3 classify">
+              <button
+                class="site-btn px-4 d-block py-2 mt-3 classify"
+                onclick="classify('lr')"
+              >
                 Logistic Regression Classifier
               </button>
               <h2 class="personal-info result">Results</h2>

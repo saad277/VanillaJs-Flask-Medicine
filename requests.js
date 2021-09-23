@@ -1,24 +1,26 @@
 let stage = document.querySelector("#pressureStage");
 let medication = document.querySelector("#medication");
 
-function randomForest() {
-  if (
-    !(
-      gender !== null &&
-      age !== null &&
-      headache !== null &&
-      breadth !== null &&
-      visual !== null &&
-      nose !== null &&
-      blood !== null &&
-      range !== null &&
-      dRange !== null
-    )
-  ) {
+const canSubmit = () => {
+  return (
+    gender !== null &&
+    age !== null &&
+    headache !== null &&
+    breadth !== null &&
+    visual !== null &&
+    nose !== null &&
+    blood !== null &&
+    range !== null &&
+    dRange !== null
+  );
+};
+
+function classify(url) {
+  if (!canSubmit()) {
     alert("Select All options");
     return;
   }
-  fetch("http://192.168.0.106:5000/rf", {
+  fetch(`http://192.168.0.106:5000/${url}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -44,9 +46,9 @@ function randomForest() {
 
 const MEDICINES = {
   "HYPERTENSION (Stage-1)": "Medicine: Norvac",
-  "HYPERTENSION (Stage-2)": "medicine: Sofvasc",
-  "HYPERTENSIVE CRISIS": "medicine: Losarten",
-  "HYPERTENSION (Stage-1).": "medicine: Lipiget",
-  "HYPERTENSION (Stage-2).": "medicine: Natrilix",
-  "HYPERTENSIVE CRISIS.": "medicine: Benefol",
+  "HYPERTENSION (Stage-2)": "Medicine: Sofvasc",
+  "HYPERTENSIVE CRISIS": "Medicine: Losarten",
+  "HYPERTENSION (Stage-1).": "Medicine: Lipiget",
+  "HYPERTENSION (Stage-2).": "Medicine: Natrilix",
+  "HYPERTENSIVE CRISIS.": "Medicine: Benefol",
 };
